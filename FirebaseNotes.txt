@@ -1,0 +1,14 @@
+
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyANhgoDbFLysVmyfTRoYm3m9OXVg8YFUfA",
+    authDomain: "sharenlearn-223d0.firebaseapp.com",
+    databaseURL: "https://sharenlearn-223d0.firebaseio.com",
+    projectId: "sharenlearn-223d0",
+    storageBucket: "",
+    messagingSenderId: "553032259019"
+  };
+  firebase.initializeApp(config);
+</script>

@@ -1,0 +1,17 @@
+
+
+
+<div class="container">
+
+	<form (ngSubmit)= "loginButtonClick()"  class="form-signin">
+		<h1 class="form-signin-heading text-muted">Sign In</h1>
+		
+		<input [(ngModel)]="email" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Email address" required="" autofocus="">
+		<input [(ngModel)]="password" [ngModelOptions]="{standalone: true}" type="password" class="form-control" placeholder="Password" required="">
+		<p>{{email}}</p>
+		<button class="btn btn-lg btn-primary btn-block"  type="submit">
+			Sign In
+		</button>
+	</form>
+
+</div>
