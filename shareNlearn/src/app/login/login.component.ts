@@ -7,29 +7,49 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email:string;
-  password:string;
- 
+  email: string;
+  password: string;
+
+  userMessage: string;
+
 
   error: any;
   constructor(public authService: AuthService) {
-   
+    this.userMessage = "";
+
 
   }
 
 
   ngOnInit() {
   }
-  
-  loginButtonClick(){
+
+  /**
+   * Sign up method 
+   */
+  singUpByEmailIDButton() {
+    this.authService.signUpWithEmail(this.email, this.password)
+      .then((res) => {
+        console.log(res);
+        this.userMessage = this.email + " Added successfully!"
+      })
+      .catch((err) => {
+        console.log(err);
+        this.userMessage = err + " Failed to Add User !"
+      });
+  }
+
+  loginByEmailIDButtonClick() {
     console.log("login button clicked");
-    alert(this.email);
-    alert(this.password);
+    this.authService.loginWithEmail(this.email, this.password)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
-    //this.authService.loginWithEmail(this.email,this.password);
 
-    this.authService.signUpWithEmail(this.email,this.password);
-
-  }  
+  }
 
 }
